@@ -6,24 +6,20 @@ import lombok.Setter;
 
 @Entity
 public class BreedingRecord {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
+    
     private String offspringName;
-
-    public Long getId() {
-        return id;
-    }
-
+    
+    @ManyToOne
+    private Dog dog;
+    
     public void setId(Long id) {
         this.id = id;
     }
-
-    public String getOffspringName() {
-        return offspringName;
-    }
-
+    
     public void setOffspringName(String offspringName) {
         this.offspringName = offspringName;
     }

@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+@Entity
 public class Certification {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -11,6 +12,10 @@ public class Certification {
 
     private String certificateName;
     private String issuedBy;
+
+    @ManyToOne
+    @JoinColumn(name="dog_id")
+    private Dog dog;
 
     public Long getId() {
         return id;
@@ -34,5 +39,13 @@ public class Certification {
 
     public void setIssuedBy(String issuedBy) {
         this.issuedBy = issuedBy;
+    }
+
+    public Dog getDog() {
+        return this.dog;
+    }
+
+    public void setDog(Dog dog) {
+        this.dog = dog;
     }
 }

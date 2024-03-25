@@ -12,7 +12,7 @@ import java.util.Objects;
 @Getter
 @Entity
 @Data
-@Table(name = "navarlara")
+@Table(name = "dog")
 public class Dog {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -22,13 +22,13 @@ public class Dog {
 
     private String pedigreeNumber;
 
-    private String breed;
-
-    private String gender;
-
     private LocalDate dateOfBirth;
-
+    
+    private String gender;
+    
     private String color;
+    
+    private String breed;
 
     @OneToOne(cascade = CascadeType.ALL)
     private Dog parent;

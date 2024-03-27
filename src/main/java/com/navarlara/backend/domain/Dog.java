@@ -1,17 +1,15 @@
 package com.navarlara.backend.domain;
 
 import jakarta.persistence.*;
-import lombok.Data;
-import lombok.Getter;
+
 
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
-@Getter
+
 @Entity
-@Data
 @Table(name = "dog")
 public class Dog {
     @Id
